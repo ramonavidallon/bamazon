@@ -24,4 +24,5 @@ VALUES (100, "Quest Bars", "Food", 18.99, 200),
 (6, "Avocado Cooking Oil", "Food", 8.99, 30),
 (720, "Pioneer DDJ-SB3", "Electronics", 325.99, 20),
 (822, "Clorox Surface Wipes", "Cleaning", 399.99, 61),
-(90, "Omaha Assorted Steaks", "Food", 99.99, 100)
+(90, "Omaha Assorted Steaks", "Food", 99.99, 100),
+(101, "Bananas", "Food", 2.99, 55)
