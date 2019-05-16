@@ -16,13 +16,14 @@ SELECT * FROM products;
 
 
 INSERT INTO products (item_id, product_name, department_name, price, stock_quantity)
-VALUES (100, "Quest Bars", "Food", 18.99, 200),
-(22, "Quest Chips", "Food", 15.99, 80),
-(310, "Tim's Cascade Chips", "Food", 9.99, 90),
-(41, "Mrs. Meyers Hand Soap", "Cleaning", 21.99, 65),
-(58, "Samsung OLED TV", "Electronics", 2000.99, 15),
-(6, "Avocado Cooking Oil", "Food", 8.99, 30),
-(720, "Pioneer DDJ-SB3", "Electronics", 325.99, 20),
-(822, "Clorox Surface Wipes", "Cleaning", 399.99, 61),
-(90, "Omaha Assorted Steaks", "Food", 99.99, 100),
-(101, "Bananas", "Food", 2.99, 55)
+VALUES 
+(1, "Bread", "Food", 51.99, 20),
+(2, "Chips", "Food", 15.99, 80),
+(3, "Cheese", "Food", 9.99, 90),
+(4, "Soap", "Cleaning", 21.99, 65),
+(5, "TV", "Electronics", 2000.99, 15),
+(6, "Oil", "Food", 8.99, 30),
+(7, "DDJ-SB3", "Electronics", 325.99, 20),
+(8, "Wipes", "Cleaning", 399.99, 61),
+(9, "Steak", "Food", 99.99, 100),
+(10, "Bananas", "Food", 2.99, 55)

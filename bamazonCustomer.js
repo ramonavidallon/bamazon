@@ -1,8 +1,5 @@
 var mysql = require('mysql');
 var inquirer = require('inquirer');
-// var Table = require('cli-table');
-// var chalk = require('chalk');
-
 
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -19,7 +16,7 @@ connection.connect(function(err){
 
 function displayItems() {
   connection.query(
-    "select item_id, product_name, price, stock_quantity from products where stock_quantity>0",
+    "SELECT item_id, product_name, price, stock_quantity from products where stock_quantity>0",
     function(err, res) {
       if (err) throw err;
       console.log("Id \t Name \t Price \t Quantity\n");
@@ -65,17 +62,48 @@ function displayQuestions(length) {
           purchaseItem > length +1 ||
           isNaN(purchaseItem) ||
           isNaN(answer.quantity)
-        ) {
+        ) 
+        {
+          // console.log(answer);
+
           console.log("Incorrect input");
           if (purchaseItem > length + 1 || isNaN(purchaseItem)) {
             console.log("Invalid item");
           }
+          if (isNaN(answer.quantity)) {
+            console.log("Invalid quantity");
+          }
           
+          displayItems();
+
+        } else {
+          connection.query(
+            "SELECT * FROM products WHERE item_id = ?",
+            [purchaseItem],
+            function(err, res) {
+              if (err) throw err;
+              if (answer.quantity > res[0].stock_quantity) {
+                console.log("Quantity overload!");
+
+              } else {
+                var updateQuantity = res[0].stock_quantity - parseFloat(answer.quantity);
+                connection.query(
+                  "UPDATE item SET ? WHERE ?",
+                  [
+                    {stock_quantity: updateQuantity},
+                    {item_id: purchaseItem},
+                  ],
+                  function(err, res) {
+                    if (err) throw err;
+                  }
+                );
+                var price = res[0].price * answer.quantity;
+                console.log("Total Price: $" + price.toFixed(2));
+              }
+              displayItems();
+            }
+          )
         }
-
-
-
-
       });
     })
 }
