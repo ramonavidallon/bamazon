@@ -18,8 +18,7 @@
         <li> inquirer </li>   
   </li>
      </ul>
-     
-     </ul>
+</ul>
      
 <h2> Demonstration (image) </h2>
 
