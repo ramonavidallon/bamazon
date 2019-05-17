@@ -95,15 +95,15 @@ function displayQuestions(length) {
                   ],
                   function(err, res) {
                     if (err) throw err;
-                  }
-                );
+                  });
+
                 var price = res[0].price * answer.quantity;
-                console.log("Total Price: $" + price.toFixed(2));
+                console.log("Your total price today will be: $" + price.toFixed(2));
               }
-              displayItems();
             }
-          )
-        }
-      });
+            )
+            displayItems();
+          }
+        });
     })
 }
