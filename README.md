@@ -17,5 +17,9 @@
         <li> mysql </li>
         <li> inquirer </li>   
   </li>
+     </ul>
      
 <h2> Demonstration (image) </h2>
+
+<img width="698" alt="challenge1" src="https://user-images.githubusercontent.com/43662571/57896864-b5b2aa00-7807-11e9-8fad-87d06445460c.png">
+
